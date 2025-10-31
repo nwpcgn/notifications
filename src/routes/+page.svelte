@@ -3,7 +3,7 @@
 </script>
 
 <div
-	class="relative grid h-full w-full grid-cols-1 grid-rows-[1fr_min-content] overflow-hidden md:grid-cols-[1fr_min-content] md:grid-rows-1">
+	class="sky relative grid h-full w-full grid-cols-1 grid-rows-[1fr_min-content] overflow-hidden md:grid-cols-[1fr_min-content] md:grid-rows-1">
 	<main class="relative overflow-hidden">
 		<section class="grid h-full w-full place-content-center">
 			<Notifications label="Logger"></Notifications>
