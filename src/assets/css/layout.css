@@ -1,0 +1,90 @@
+@media (max-width: 639px) {
+	.layout {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: min-content 1fr min-content min-content;
+		grid-template-areas:
+			'app-bar'
+			'main'
+			'foo-bar'
+			'side-bar';
+		width: 100%;
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.main {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr min-content;
+		gap: 0px 0px;
+		grid-template-areas:
+			'page'
+			'aside';
+		grid-area: main;
+		width: 100%;
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+	}
+}
+
+@media (min-width: 640px) {
+	.layout {
+		display: grid;
+		grid-template-columns: 1fr min-content;
+		grid-template-rows: min-content 1fr min-content;
+		grid-auto-flow: row;
+		grid-template-areas:
+			'app-bar side-bar'
+			'main side-bar'
+			'foo-bar side-bar';
+		width: 100%;
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+	}
+
+	.main {
+		display: grid;
+		grid-template-columns: 1fr min-content;
+		grid-template-rows: 1fr;
+		grid-auto-flow: row;
+		grid-template-areas: 'page aside';
+		width: 100%;
+		height: 100%;
+		position: relative;
+		overflow: hidden;
+	}
+}
+
+.page {
+	grid-area: page;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.aside {
+	grid-area: aside;
+}
+.app-bar {
+	grid-area: app-bar;
+}
+.foo-bar {
+	grid-area: foo-bar;
+}
+
+.side-bar {
+	grid-area: side-bar;
+}
+
+/* ------------------------------------------- DEVELOP ------------------------------------------ */
+
+.foo-bar {
+	background-color: oklch(70.4% 0.14 182.503);
+	padding: 1rem;
+	color: oklch(96.8% 0.007 247.896);
+}

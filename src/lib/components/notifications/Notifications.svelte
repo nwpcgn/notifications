@@ -29,8 +29,8 @@
 	let fch: number = $state(0)
 	let {
 		label,
-		boxClass = 'size-96 overflow-y-auto rounded-l-box bg-base-100 bg-neutral p-2 text-neutral-content',
-		headerClass = 'mb-2 flex items-center gap-2 rounded-box bg-base-300 p-4'
+		boxClass = 'overflow-y-auto p-2 flex-1',
+		headerClass = 'flex items-center gap-2 pp-2'
 	} = $props()
 	const addNote = async () => {
 		const obj = getNote()
@@ -74,7 +74,7 @@
 {/snippet}
 
 {#if label}
-	<header class={headerClass}>
+	<header class="flex items-center gap-2 border">
 		<div class="h4">
 			<span
 				class="transition-opacity duration-300 ease-in"
@@ -84,7 +84,6 @@
 					>+{log.messages.length}</span>
 			{/if}
 		</div>
-
 		<span class="flex-1"></span>
 		<nav class="grid grid-cols-2 gap-2">
 			<button
@@ -105,11 +104,11 @@
 {/if}
 
 <div
-	class={boxClass}
+	class="border flex-1"
 	bind:this={frame}
 	bind:clientHeight={fh}
 	bind:clientWidth={fw}>
-	<div class="grid gap-2" bind:clientHeight={fch}>
+	<div class="flex flex-col gap-2 bg-base-300 h-full" bind:clientHeight={fch}>
 		{#each log.list as note (note.id)}
 			{@render msgLine(note)}
 		{:else}

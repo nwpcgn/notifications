@@ -1,0 +1,83 @@
+:root {
+	--spacing-base-define: 1rem;
+	--page-width-define: 780px;
+	--page-width-sm-define: 360px;
+	--spacing-base: var(--spacing-base-define);
+	--spacing-xs: calc(var(--spacing-base) * 0.25);
+	--spacing-sm: calc(var(--spacing-base) * 0.5);
+	--spacing-md: calc(var(--spacing-base) * 0.75);
+	--spacing-lg: calc(var(--spacing-base) * 1.5);
+	--spacing-xl: calc(var(--spacing-base) * 2);
+	--spacing-clamp: clamp(var(--spacing-base), 2vw, var(--spacing-lg));
+	--content-space: var(--spacing-base);
+	--page-space: var(--content-space);
+	--page-width: var(--page-width-define);
+}
+
+body {
+	width: 100vw;
+	height: 100vh;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	overflow: hidden;
+}
+
+.img-grid {
+	--min: 68px;
+	--gap: 0.5rem;
+	display: grid;
+	grid-gap: var(--gap);
+	grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+}
+
+.img-grid figure {
+	display: grid;
+	place-content: center;
+	aspect-ratio: 1/1;
+	border: 1px dashed red;
+}
+
+svg.icon,
+svg.nwp-icon {
+	display: inline-block;
+	width: 1em;
+	height: 1em;
+	stroke-width: 0;
+	stroke: currentColor;
+	fill: currentColor;
+}
+
+svg.icon,
+svg.nwp-icon {
+	font-size: var(--fs, 24px);
+}
+
+svg.icon-lg {
+	--fs: 32px;
+}
+
+svg.icon-xl {
+	--fs: 48px;
+}
+
+svg.icon-sm {
+	--fs: 20px;
+}
+
+svg.icon-xs {
+	--fs: 16px;
+}
+
+.padded {
+	padding: var(--spacing-clamp);
+}
+
+.padded-flat {
+	padding: 0 clamp(1rem, 2vw, 2rem);
+}
+
+.padded-small {
+	padding: calc(clamp(1rem, 2vw, 2rem) * 0.5) clamp(1rem, 2vw, 2rem);
+}
