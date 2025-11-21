@@ -2,7 +2,7 @@
  */
 @import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap');
 @import 'tailwindcss';
-@plugin 'daisyui';
+/* @plugin 'daisyui';
 
 @plugin 'daisyui/theme' {
 	name: 'light';
@@ -40,7 +40,7 @@
 	--border: 1px;
 	--depth: 0;
 	--noise: 0;
-}
+} */
 
 @import './assets/css/reboot.css';
 /* @import './assets/css/gameboy.css'; */

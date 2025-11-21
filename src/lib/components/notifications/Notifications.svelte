@@ -65,14 +65,14 @@
 				onclick={() => {
 					log.remove(id)
 				}}
-				class="size-4 cursor-pointer rounded-box text-sm">
+				class="rounded-box size-4 cursor-pointer text-sm">
 				&#10006;
 			</button>
 		{/if}
 		<span out:fade={{ duration: 200 }} in:typewriter>{message}</span>
 	</div>
 {/snippet}
-
+<!-- 
 {#if label}
 	<header class="flex items-center gap-2 border">
 		<div class="h4">
@@ -80,7 +80,7 @@
 				class="transition-opacity duration-300 ease-in"
 				class:opacity-40={log.busy}>{label}</span>
 			{#if log.messages.length}
-				<span class="text-lg text-accent" transition:fade
+				<span class="text-accent text-lg" transition:fade
 					>+{log.messages.length}</span>
 			{/if}
 		</div>
@@ -89,26 +89,26 @@
 			<button
 				onclick={addNote}
 				aria-label="addNote"
-				class="size-6 cursor-pointer rounded-box bg-info text-info-content">
+				class="rounded-box bg-info text-info-content size-6 cursor-pointer">
 				&#10010;
 			</button>
 			<button
 				disabled={log.busy}
 				onclick={clearList}
 				aria-label="clearNotes"
-				class="size-6 cursor-pointer rounded-box bg-error text-error-content">
+				class="rounded-box bg-error text-error-content size-6 cursor-pointer">
 				&#10006;
 			</button>
 		</nav>
 	</header>
-{/if}
+{/if} -->
 
 <div
-	class="border flex-1"
+	class="flex-1 w-full md:w-[260px] lg:w-[320px] xl:w-[420px]"
 	bind:this={frame}
 	bind:clientHeight={fh}
 	bind:clientWidth={fw}>
-	<div class="flex flex-col gap-2 bg-base-300 h-full" bind:clientHeight={fch}>
+	<div class="bg-base-300 flex h-full flex-col gap-2" bind:clientHeight={fch}>
 		{#each log.list as note (note.id)}
 			{@render msgLine(note)}
 		{:else}

@@ -65,7 +65,7 @@
 	<fieldset>
 		<legend>Stepper Component</legend>
 
-		<div class="gap-2 grid grid-cols-3">
+		<div class="grid grid-cols-3 gap-2">
 			<div>
 				<label for="f-min">min:</label>
 				<input
